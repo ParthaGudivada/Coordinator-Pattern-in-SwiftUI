@@ -6,15 +6,15 @@
 //
 
 import Foundation
+import Observation
 import SwiftUI
 
+@Observable
+final class Coordinator {
+    var path: NavigationPath = NavigationPath()
+    var sheet: Sheet?
+    var fullScreenCover: FullScreenCover?
 
-class Coordinator: ObservableObject {
-    @Published var path: NavigationPath = NavigationPath()
-    @Published var sheet: Sheet?
-    @Published var fullScreenCover: FullScreenCover?
-    
-    
     func push(page: AppPages) {
         path.append(page)
     }
@@ -43,25 +43,30 @@ class Coordinator: ObservableObject {
         self.fullScreenCover = nil
     }
     
-    @ViewBuilder
+    @ViewBuilder @MainActor
     func build(page: AppPages) -> some View {
         switch page {
-        case .main: WalkthroughView()
-        case .login: LoginView()
+        case .main:
+            WalkthroughView()
+
+        case .login:
+            LoginView(viewModel: LoginViewModel())
         }
     }
     
-    @ViewBuilder
+    @ViewBuilder @MainActor
     func buildSheet(sheet: Sheet) -> some View {
         switch sheet {
-        case .forgotPassword: ForgotPasswordView()
+        case .forgotPassword:
+                ForgotPasswordView(viewModel: ForgotPasswordViewModel())
         }
     }
     
-    @ViewBuilder
+    @ViewBuilder @MainActor
     func buildCover(cover: FullScreenCover) -> some View {
         switch cover {
-        case .signup: SignupView()
+        case .signup:
+            SignupView(viewModel: SignupViewModel())
         }
     }
 }

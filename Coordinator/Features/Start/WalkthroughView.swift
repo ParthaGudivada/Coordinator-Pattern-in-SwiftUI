@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct WalkthroughView: View {
-    
-    @EnvironmentObject private var coordinator: Coordinator
-    
+    @Environment(Coordinator.self) private var coordinator: Coordinator
+
     var body: some View {
         VStack {
             Spacer()
@@ -31,5 +30,8 @@ struct WalkthroughView: View {
 }
 
 #Preview {
+    @Previewable @State var coordinator = Coordinator()
+
     WalkthroughView()
+        .environment(coordinator)
 }

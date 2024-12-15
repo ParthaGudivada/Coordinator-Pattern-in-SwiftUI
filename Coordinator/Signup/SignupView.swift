@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct SignupView: View {
-    @EnvironmentObject private var coordinator: Coordinator
-    @State private var username: String = ""
-    @State private var email: String = ""
-    @State private var password: String = ""
-    @State private var confirmPassword: String = ""
-    @State private var isSecure: Bool = true
+    @Environment(Coordinator.self) private var coordinator: Coordinator
+
+    @State private var viewModel: SignupViewModel
+
+    init(viewModel: SignupViewModel) {
+        _viewModel = .init(initialValue: viewModel)
+    }
 
     var body: some View {
         VStack {
@@ -35,7 +36,7 @@ struct SignupView: View {
                     .font(.subheadline)
                     .padding(.bottom, 5)
 
-                TextField("Enter your username", text: $username)
+                TextField("Enter your username", text: $viewModel.username)
                     .padding()
                     .background(Color(.secondarySystemBackground))
                     .cornerRadius(5)
@@ -45,7 +46,7 @@ struct SignupView: View {
                     .font(.subheadline)
                     .padding(.bottom, 5)
 
-                TextField("Enter your email address", text: $email)
+                TextField("Enter your email address", text: $viewModel.email)
                     .padding()
                     .background(Color(.secondarySystemBackground))
                     .cornerRadius(5)
@@ -56,15 +57,15 @@ struct SignupView: View {
                     .padding(.bottom, 5)
 
                 HStack {
-                    if isSecure {
-                        SecureField("Enter your password", text: $password)
+                    if viewModel.isSecure {
+                        SecureField("Enter your password", text: $viewModel.password)
                     } else {
-                        TextField("Enter your password", text: $password)
+                        TextField("Enter your password", text: $viewModel.password)
                     }
                     Button(action: {
-                        isSecure.toggle()
+                        viewModel.isSecure.toggle()
                     }) {
-                        Image(systemName: isSecure ? "eye.slash" : "eye")
+                        Image(systemName: viewModel.isSecure ? "eye.slash" : "eye")
                             .foregroundColor(.gray)
                     }
                 }
@@ -78,15 +79,16 @@ struct SignupView: View {
                     .padding(.bottom, 5)
 
                 HStack {
-                    if isSecure {
-                        SecureField("Confirm your password", text: $confirmPassword)
+                    if viewModel.isSecure {
+                        SecureField("Confirm your password", text: $viewModel.confirmPassword)
                     } else {
-                        TextField("Confirm your password", text: $confirmPassword)
+                        TextField("Confirm your password", text: $viewModel.confirmPassword)
                     }
+
                     Button(action: {
-                        isSecure.toggle()
+                        viewModel.isSecure.toggle()
                     }) {
-                        Image(systemName: isSecure ? "eye.slash" : "eye")
+                        Image(systemName: viewModel.isSecure ? "eye.slash" : "eye")
                             .foregroundColor(.gray)
                     }
                 }
@@ -125,5 +127,8 @@ struct SignupView: View {
 }
 
 #Preview {
-    SignupView()
+    @Previewable @State var coordinator = Coordinator()
+
+    SignupView(viewModel: SignupViewModel())
+        .environment(coordinator)
 }

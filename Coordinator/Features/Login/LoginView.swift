@@ -8,52 +8,69 @@
 import SwiftUI
 
 struct LoginView: View {
-    
-    @EnvironmentObject private var coordinator: Coordinator
-    @State private var username: String = ""
-    @State private var password: String = ""
-    @State private var isSecure: Bool = true
-    
+    @Environment(Coordinator.self) private var coordinator: Coordinator
+
+    @State private var viewModel: LoginViewModel
+
+    init(viewModel: LoginViewModel) {
+        _viewModel = .init(initialValue: viewModel)
+    }
+
     var body: some View {
+        ZStack {
+            mainView
+
+            if viewModel.isFetching {
+                ProgressView()
+                    .controlSize(.extraLarge)
+            }
+        }
+        .background(Color(.systemGroupedBackground))
+        .edgesIgnoringSafeArea(.all)
+    }
+}
+
+private extension LoginView {
+    var mainView: some View {
         VStack {
             Spacer()
-            
+
             Text("Welcome Back")
                 .font(.largeTitle)
                 .fontWeight(.semibold)
                 .padding(.bottom, 20)
-            
+
             Image(systemName: "person.circle.fill")
                 .resizable()
                 .frame(width: 100, height: 100)
                 .foregroundColor(.blue)
                 .padding(.bottom, 40)
-            
+
             VStack(alignment: .leading) {
                 Text("Username")
                     .font(.headline)
                     .padding(.bottom, 5)
-                
-                TextField("Enter your username", text: $username)
+
+                TextField("Enter your username", text: $viewModel.username)
                     .padding()
                     .background(Color(.secondarySystemBackground))
                     .cornerRadius(5)
                     .padding(.bottom, 20)
-                
+
                 Text("Password")
                     .font(.headline)
                     .padding(.bottom, 5)
-                
+
                 HStack {
-                    if isSecure {
-                        SecureField("Enter your password", text: $password)
+                    if viewModel.isSecure {
+                        SecureField("Enter your password", text: $viewModel.password)
                     } else {
-                        TextField("Enter your password", text: $password)
+                        TextField("Enter your password", text: $viewModel.password)
                     }
                     Button(action: {
-                        isSecure.toggle()
+                        viewModel.isSecure.toggle()
                     }) {
-                        Image(systemName: isSecure ? "eye.slash" : "eye")
+                        Image(systemName: viewModel.isSecure ? "eye.slash" : "eye")
                             .foregroundColor(.gray)
                     }
                 }
@@ -62,9 +79,9 @@ struct LoginView: View {
                 .cornerRadius(5)
             }
             .padding(.horizontal, 30)
-            
+
             Button(action: {
-                // Handle login action here
+                viewModel.validateUser()
             }) {
                 Text("Login")
                     .foregroundColor(.white)
@@ -75,9 +92,9 @@ struct LoginView: View {
                     .padding(.horizontal, 30)
             }
             .padding(.top, 30)
-            
+
             Spacer()
-            
+
             VStack {
                 Button(action: {
                     coordinator.presentSheet(.forgotPassword)
@@ -86,7 +103,7 @@ struct LoginView: View {
                         .foregroundColor(.blue)
                 }
                 .padding(.bottom, 10)
-                
+
                 HStack {
                     Text("Don't have an account?")
                     Button(action: {
@@ -99,8 +116,13 @@ struct LoginView: View {
                 .padding(.bottom, 20)
             }
         }
-        .background(Color(.systemGroupedBackground))
-        .edgesIgnoringSafeArea(.all)
     }
+}
+
+#Preview {
+    @Previewable @State var coordinator = Coordinator()
+
+    LoginView(viewModel: LoginViewModel())
+        .environment(coordinator)
 }
 

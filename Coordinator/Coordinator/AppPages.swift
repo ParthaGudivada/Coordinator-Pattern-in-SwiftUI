@@ -14,7 +14,7 @@ enum AppPages: Hashable {
 
 enum Sheet: String, Identifiable {
     var id: String {
-        self.rawValue
+        rawValue
     }
     
     case forgotPassword
@@ -22,7 +22,7 @@ enum Sheet: String, Identifiable {
 
 enum FullScreenCover: String, Identifiable {
     var id: String {
-        self.rawValue
+        rawValue
     }
     
     case signup

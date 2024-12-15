@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct ForgotPasswordView: View {
-    @EnvironmentObject private var coordinator: Coordinator
-    @State private var email: String = ""
+    @Environment(Coordinator.self) private var coordinator: Coordinator
+
+    @State private var viewModel: ForgotPasswordViewModel
+
+    init(viewModel: ForgotPasswordViewModel) {
+        _viewModel = .init(initialValue: viewModel)
+    }
 
     var body: some View {
         VStack {
@@ -31,7 +36,7 @@ struct ForgotPasswordView: View {
                     .font(.subheadline)
                     .padding(.bottom, 5)
                 
-                TextField("Enter your email address", text: $email)
+                TextField("Enter your email address", text: $viewModel.email)
                     .padding()
                     .background(Color(.secondarySystemBackground))
                     .cornerRadius(5)
@@ -67,7 +72,9 @@ struct ForgotPasswordView: View {
     }
 }
 
-
 #Preview {
-    ForgotPasswordView()
+    @Previewable @State var coordinator = Coordinator()
+
+    ForgotPasswordView(viewModel: ForgotPasswordViewModel())
+        .environment(coordinator)
 }

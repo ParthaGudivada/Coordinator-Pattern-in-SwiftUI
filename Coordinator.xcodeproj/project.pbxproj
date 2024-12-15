@@ -3,35 +3,25 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D5B303932C4F8A9600C9DAF3 /* AppPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B303922C4F8A9600C9DAF3 /* AppPages.swift */; };
-		D5B303952C4FAB1100C9DAF3 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B303942C4FAB1100C9DAF3 /* SignupView.swift */; };
-		D5C3C7512C45441D0021FF0A /* CoordinatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3C7502C45441D0021FF0A /* CoordinatorApp.swift */; };
-		D5C3C7532C45441D0021FF0A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3C7522C45441D0021FF0A /* LoginView.swift */; };
-		D5C3C7552C45441E0021FF0A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5C3C7542C45441E0021FF0A /* Assets.xcassets */; };
 		D5C3C7582C45441E0021FF0A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5C3C7572C45441E0021FF0A /* Preview Assets.xcassets */; };
-		D5C3C75F2C4544680021FF0A /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3C75E2C4544680021FF0A /* ForgotPasswordView.swift */; };
-		D5C3C7652C45566E0021FF0A /* WalkthroughView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3C7642C45566E0021FF0A /* WalkthroughView.swift */; };
-		D5C3C7672C4B9A780021FF0A /* CoordinatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3C7662C4B9A780021FF0A /* CoordinatorView.swift */; };
-		D5C3C7692C4B9B360021FF0A /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C3C7682C4B9B360021FF0A /* Coordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D5B303922C4F8A9600C9DAF3 /* AppPages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppPages.swift; sourceTree = "<group>"; };
-		D5B303942C4FAB1100C9DAF3 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		D5C3C74D2C45441D0021FF0A /* Coordinator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coordinator.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D5C3C7502C45441D0021FF0A /* CoordinatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorApp.swift; sourceTree = "<group>"; };
-		D5C3C7522C45441D0021FF0A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		D5C3C7542C45441E0021FF0A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5C3C7572C45441E0021FF0A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		D5C3C75E2C4544680021FF0A /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
-		D5C3C7642C45566E0021FF0A /* WalkthroughView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalkthroughView.swift; sourceTree = "<group>"; };
-		D5C3C7662C4B9A780021FF0A /* CoordinatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorView.swift; sourceTree = "<group>"; };
-		D5C3C7682C4B9B360021FF0A /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		53EEF57C2D0EDC5C00EF9AB1 /* Signup */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Signup; sourceTree = "<group>"; };
+		53EEF57F2D0EDD9A00EF9AB1 /* App */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = App; sourceTree = "<group>"; };
+		53EEF5802D0EDDAE00EF9AB1 /* Coordinator */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Coordinator; sourceTree = "<group>"; };
+		53EEF5842D0EE1F200EF9AB1 /* Resources */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Resources; sourceTree = "<group>"; };
+		53EEF5852D0EE20F00EF9AB1 /* Features */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Features; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D5C3C74A2C45441D0021FF0A /* Frameworks */ = {
@@ -63,16 +53,12 @@
 		D5C3C74F2C45441D0021FF0A /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				D5C3C7502C45441D0021FF0A /* CoordinatorApp.swift */,
-				D5C3C7642C45566E0021FF0A /* WalkthroughView.swift */,
-				D5C3C7522C45441D0021FF0A /* LoginView.swift */,
-				D5C3C75E2C4544680021FF0A /* ForgotPasswordView.swift */,
-				D5B303942C4FAB1100C9DAF3 /* SignupView.swift */,
-				D5C3C7662C4B9A780021FF0A /* CoordinatorView.swift */,
-				D5C3C7682C4B9B360021FF0A /* Coordinator.swift */,
-				D5B303922C4F8A9600C9DAF3 /* AppPages.swift */,
-				D5C3C7542C45441E0021FF0A /* Assets.xcassets */,
+				53EEF57F2D0EDD9A00EF9AB1 /* App */,
+				53EEF5802D0EDDAE00EF9AB1 /* Coordinator */,
+				53EEF5852D0EE20F00EF9AB1 /* Features */,
 				D5C3C7562C45441E0021FF0A /* Preview Content */,
+				53EEF5842D0EE1F200EF9AB1 /* Resources */,
+				53EEF57C2D0EDC5C00EF9AB1 /* Signup */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -99,6 +85,13 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				53EEF57C2D0EDC5C00EF9AB1 /* Signup */,
+				53EEF57F2D0EDD9A00EF9AB1 /* App */,
+				53EEF5802D0EDDAE00EF9AB1 /* Coordinator */,
+				53EEF5842D0EE1F200EF9AB1 /* Resources */,
+				53EEF5852D0EE20F00EF9AB1 /* Features */,
 			);
 			name = Coordinator;
 			productName = Coordinator;
@@ -144,7 +137,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5C3C7582C45441E0021FF0A /* Preview Assets.xcassets in Resources */,
-				D5C3C7552C45441E0021FF0A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,14 +147,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5C3C7692C4B9B360021FF0A /* Coordinator.swift in Sources */,
-				D5C3C7532C45441D0021FF0A /* LoginView.swift in Sources */,
-				D5B303932C4F8A9600C9DAF3 /* AppPages.swift in Sources */,
-				D5C3C7672C4B9A780021FF0A /* CoordinatorView.swift in Sources */,
-				D5B303952C4FAB1100C9DAF3 /* SignupView.swift in Sources */,
-				D5C3C7652C45566E0021FF0A /* WalkthroughView.swift in Sources */,
-				D5C3C75F2C4544680021FF0A /* ForgotPasswordView.swift in Sources */,
-				D5C3C7512C45441D0021FF0A /* CoordinatorApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +213,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
 			};
 			name = Debug;
 		};
@@ -284,6 +269,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_STRICT_CONCURRENCY = complete;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -304,6 +290,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +299,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.archidev.Coordinator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -333,6 +320,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -341,7 +329,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.archidev.Coordinator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
